@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(hellocpp LANGUAGES CXX)
+project(vscodecmakecpp LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 11)
