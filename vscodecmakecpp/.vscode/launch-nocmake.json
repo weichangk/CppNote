@@ -5,10 +5,10 @@
           "name": "(gdb) 启动",
           "type": "cppdbg",
           "request": "launch",
-          "program": "${command:cmake.launchTargetPath}",
+          "program": "${workspaceFolder}\\src\\${workspaceFolderBasename}.exe",
           "args": [],
           "stopAtEntry": false,
-          "cwd": "${workspaceRoot}",
+          "cwd": "${workspaceFolder}\\src",
           "environment": [],
           "externalConsole": false,
           "MIMode": "gdb",
@@ -24,7 +24,8 @@
                   "text": "-gdb-set disassembly-flavor intel",
                   "ignoreFailures": true
               }
-          ]
+          ],
+          "preLaunchTask": "C/C++: g++.exe vscodecmakecpp"//关联tasks.json文件
       }
   ]
 }

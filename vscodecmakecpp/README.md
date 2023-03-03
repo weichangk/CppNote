@@ -3,7 +3,7 @@
 - C++ vscode 开发环境搭建准备
 - 了解g++命令编译调试
 - 掌握使用launch.json和tasks.json配置文件编译调试
-- cmake构建工具学习
+- 了解使用cmake构建
 
 git:
 https://github.com/weichangk/hellocpp/tree/master/vscodecmakecpp
@@ -227,38 +227,32 @@ https://code.visualstudio.com/docs/cpp/config-mingw
 https://blog.csdn.net/fdfdsds/article/details/102248876
 https://blog.csdn.net/weixin_40694527/article/details/84251461
 
+
 ## 基于cmake编译调试
-编写最简单的CMakeLists.txt
-```cmake
-project(myswap)
-add_executable(my_cmake_swap, main.cpp, swap.cpp)
+关于cmake的更多内容参考（后续写关于cmake的学习笔记）：
+https://cmake.org/documentation/
+https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/README.md
+
+添加CMakeLists.txt文件
 ```
-手动命令编译，进行多文件编译，并调试
+cmake_minimum_required(VERSION 3.5)
+project(vscodecmakecpp LANGUAGES CXX)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_PREFIX_PATH "d:/Qt/5.15.2/mingw81_64")
+
+aux_source_directory(./src SRCS)
+
+add_executable(${PROJECT_NAME}
+  ${SRCS}
+)
 ```
-mkdir build
-cd build
-# 如果电脑上已经安装了vs，可能会调用微软MSVC编译器，使用（cmake -G "MinGW Makefiles" ...）代替（cmake ..）即可
-# 仅第一次使用cmake时使用（cmake -G "MinGW Makefiles" ...）后面可使用cmake ..）
-```
-### 配置json
+CMake:select a kit（如果无选项可以先确保配置环境变量后使用Scan for kits搜索，或重启vscode再搜索再选择）
+CMake指令：F7编译、Ctrl + F5调试
 
+使用launch.json结合CMakeLists.txt配置文件进行调试，直接使用vscode F5启动调试
+通过修改launch.json文件"program": "${command:cmake.launchTargetPath}"参数使得launch.json使用CMakeLists.txt构建输出文件作为启动目标路径。
+删掉"preLaunchTask": "C/C++: g++.exe vscodecmakecpp" 关联了CMakeLists.txt就不需要关联tasks.json文件了。
 
-# Cross-platform development
-CMake是一个跨平台的安装编译工具，可用简单的语句来描述所有平台的安装（编译过程）
-CMake可以说已经成为大部分c++开源项目的标配
-
-# 语法特性介绍
-基本语法格式：指令(参数1 参数2 ...)
-参数之间使用空格或分号分开
-指令是不分大小写，参数和变量是区分大小写的
-变量使用${}方式取值，但是在if控制语句中是直接使用变量名
-# 重要指令和常用变量
-
-# CMake编译工程
-cmake_minimum_required 指定cmake最小版本要求
-语法：cmake_minimum_required(VERSION <min>[...<policy_max>] [FATAL_ERROR])
-cmake_minimum_required(VERSION 2.8.3)
-
-project 定义工程名称，并可指定工程支持的语言
-project(projecrname [CXX][C][Java])
-# CMake代码实践
