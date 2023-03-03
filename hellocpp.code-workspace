@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "vscodecmakecpp"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"ostream": "cpp"
+		}
+	}
+}
