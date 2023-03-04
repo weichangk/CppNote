@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "vscodecmakecpp"
+		},
+		{
+			"path": "namespace"
 		}
 	],
 	"settings": {
@@ -22,7 +25,31 @@
 			"string_view": "cpp",
 			"istream": "cpp",
 			"sstream": "cpp",
-			"streambuf": "cpp"
+			"streambuf": "cpp",
+			"test": "cpp",
+			"atomic": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cmath": "cpp",
+			"cstdarg": "cpp",
+			"cstddef": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"exception": "cpp",
+			"algorithm": "cpp",
+			"memory_resource": "cpp",
+			"system_error": "cpp",
+			"utility": "cpp",
+			"initializer_list": "cpp",
+			"iosfwd": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"stdexcept": "cpp",
+			"typeinfo": "cpp",
+			"test1": "cpp"
 		}
 	}
 }

@@ -1,0 +1,22 @@
+#pragma once
+
+namespace namespace_test1
+{
+  class Test
+  {
+    public:
+      Test();
+      ~Test();
+      void foo();
+  };
+}
+
+namespace namespace_test2
+{
+  void foo();
+
+  namespace namespace_test3
+  {
+    void foo();
+  }
+}

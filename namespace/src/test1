@@ -1,0 +1,11 @@
+#pragma once
+
+namespace namespace_test2
+{
+  void foo2();
+}
+
+namespace namespace_test3
+{
+  void foo3();
+}

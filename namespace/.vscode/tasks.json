@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe namespace",
+			"command": "D:\\Qt\\Tools\\mingw810_64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"main.cpp",
+        "test.cpp",
+        "test1.cpp",
+				"-o",
+				"${workspaceFolder}\\src\\${workspaceFolderBasename}.exe"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}\\src"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "编译器: D:\\Qt\\Tools\\mingw810_64\\bin\\g++.exe"
+		}
+	]
+}
