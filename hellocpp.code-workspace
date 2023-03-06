@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "function"
+		},
+		{
+			"path": "struct"
 		}
 	],
 	"settings": {
