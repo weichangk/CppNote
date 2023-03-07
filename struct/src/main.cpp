@@ -167,6 +167,52 @@ void func12()
   delete stu;
 }
 
+//结构体自动对齐规则
+void func13()
+{
+  struct{
+    int x;
+    char y;
+  }s;
+  //int占4byte，char占一个byte，将它们放到一个结构体中应该占4+1=5byte；但是实际上，通过运行程序得到的结果是8 byte，这就是内存对齐所导致的。
+  cout << sizeof(s) << endl;// 输出8
+}
+void func14()
+{
+  struct
+  {
+    int i;
+    char c1;
+    char c2;
+  }x1;
+
+  struct{
+    char c1;
+    int i;
+    char c2;
+  }x2;
+
+  struct{
+    char c1;
+    char c2;
+    int i;
+  }x3;
+
+  //不同平台上编译器的 pragma pack 默认值不同。而我们可以通过预编译命令#pragma pack(n), n= 1,2,4,8,16来改变对齐系数。
+  #pragma pack(2)
+  struct{
+    char c1;
+    char c2;
+    int i;
+  }x4;
+
+  cout << sizeof(x1) << endl;  // 输出8
+  cout << sizeof(x2) << endl;  // 输出12
+  cout << sizeof(x3) << endl;  // 输出8
+  cout << sizeof(x4) << endl;  // 输出6
+}
+
+
 int main(int argc, char const *argv[])
 {
   cout << "hello struct" << endl;
@@ -182,4 +228,6 @@ int main(int argc, char const *argv[])
   func10();
   func11();
   func12();
+  func13();
+  func14();
 }
