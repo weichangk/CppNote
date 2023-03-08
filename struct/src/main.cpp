@@ -212,6 +212,45 @@ void func14()
   cout << sizeof(x4) << endl;  // 输出6
 }
 
+//结构体位域
+//同类型的相邻位域可以压缩，但是压缩的位数不能小于自身类型的大小。
+void func15()
+{
+  struct MyStruct {
+    unsigned int var1:1;
+    unsigned int var2:2;
+    unsigned int var3:1;
+    unsigned char var4:1;
+    unsigned char var5:1;
+    unsigned char var6:1;
+  }s;
+  cout << sizeof(int) << endl;  // 输出4字节
+  cout << sizeof(char) << endl;  // 输出1字节
+  cout << sizeof(s) << endl;
+  // 输出6字节，按理来说应该是输出5的呀（3个int总位数4位小于4个字节能压缩到4个字节里，三个char总位数3位小于1个字节能压缩到一个字节里，即4+1=5）
+  // 输出6字节的原因是pragma pack默认值为2！设置#pragma pack(1)就会输出5了，也就是所要想极限压缩要设置#pragma pack(1)。
+
+  //cout << &s.var1 << endl;//不允许采用位域的地址，原因是位域是二进制位，而地址是以字节为单位分配地址编号最少要一个字节。
+
+  s.var1 = 3;//0011超出位域（二进制位）大小,值取到最后1位1也就是1
+  cout << s.var1 << endl;
+  s.var2 = 7;//0111超出位域（二进制位）大小,值取到最位2位11也就是3
+  cout << s.var2 << endl;
+}
+void func16()
+{
+  #pragma pack(1)
+  struct MyStruct {
+    unsigned int var1:30;
+    unsigned int var2:16;
+    unsigned int :0;//另起存储单元，即var2和var3不能压缩到一起
+    unsigned int var3:16;
+    unsigned char var4:4;
+    unsigned char :2;//无意义位段，会参与压缩但无数据
+    unsigned char var5:3;
+  }s;
+  cout << sizeof(s) << endl;  // 输出14字节
+}
 
 int main(int argc, char const *argv[])
 {
@@ -230,4 +269,6 @@ int main(int argc, char const *argv[])
   func12();
   func13();
   func14();
+  func15();
+  func16();
 }
