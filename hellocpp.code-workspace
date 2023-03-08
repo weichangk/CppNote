@@ -55,7 +55,12 @@
 			"new": "cpp",
 			"stdexcept": "cpp",
 			"typeinfo": "cpp",
-			"test1": "cpp"
+			"test1": "cpp",
+			"list": "cpp",
+			"queue": "cpp",
+			"xhash": "cpp",
+			"xstring": "cpp",
+			"xutility": "cpp"
 		}
 	}
 }
