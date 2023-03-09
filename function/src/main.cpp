@@ -16,6 +16,10 @@ void section_02()
   ns_section_02::func01();
   ns_section_02::func02();
   ns_section_02::func03();
+
+  char text[] = "Hello, world!";//带验证是不是'\0'结尾
+  string str = "Hello, world!";
+  int count = ns_section_02::c_in_str(str, 'l');
 }
 int main(int argc, char const *argv[])
 {

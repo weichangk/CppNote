@@ -8,7 +8,7 @@ Hello Cpp
     - array 数组
     - function 函数
         - 函数原型、函数签名、函数定义、函数参数传递方式
-        - 函数参数-数组、结构体、字符串、array对象
+        - 函数与 数组、结构体、字符串、array对象
     - struct 结构体
     - ptr 指针
     - ref 引用

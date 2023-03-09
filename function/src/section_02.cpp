@@ -91,4 +91,31 @@ namespace ns_section_02
   //将指针（包括数组名，数组引用）+1 实际上是加上了一个与指针指向的类型的长度（字节为单位）相等的值，对指针（包括数组名）加减就是地址偏移的过程，达到通过地址操作数组的结果。
   //相比使用指针，使用数组的引用是一种更高效的方法，因为它不需要进行指针运算，也避免了指针所需的间接性。
   //无论哪种方式，都可以将数组传递给函数，并在函数中对其进行操作或修改。
+
+
+  //int c_in_str(char str[], char ch) == int c_in_str(char* str, char ch)
+  int c_in_str(char* str, char ch)
+  {
+    int count = 0;
+    while (*str)
+    {
+      if(*str == ch)
+        count++;
+      str++;
+    }
+    return count;
+  }
+  int c_in_str(string &str, char ch)
+  {
+    int count = 0;
+    int len = size(str) - 1;
+    while (str[len])
+    {
+      char c = str[len];
+      if(str[len] == ch)
+        count++;
+      len--;
+    }
+    return count;
+  }
 }
