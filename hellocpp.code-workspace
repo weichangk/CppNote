@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "struct"
+		},
+		{
+			"path": "pretreatment"
 		}
 	],
 	"settings": {
