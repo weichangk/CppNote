@@ -9,9 +9,11 @@ namespace ns_class_02
   private:
     int age;
     string name;
+    char *lastName;
   public:
     Person();
-    Person(int a, string n);
+    Person(int a, string n, char *str);
+    Person(const Person &p);
     ~Person();
   };
 }
