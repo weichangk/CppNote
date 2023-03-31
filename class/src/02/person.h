@@ -15,6 +15,7 @@ namespace ns_class_02
     Person(int a, string n, char *str);
     Person(const Person &p);
     ~Person();
+    void SetLastName(const char *ln);
   };
 }
 

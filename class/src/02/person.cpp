@@ -7,6 +7,7 @@ namespace ns_class_02
     age = 0;
     name = "";
     lastName = nullptr;
+    cout << "ctor 1." << endl;
   }
 
   Person::Person(int a, string n, char *str) {
@@ -14,15 +15,17 @@ namespace ns_class_02
     name = n;
     lastName = new char[strlen(str) + 1];
     strcpy(lastName, str);
+    cout << "ctor 2." << endl;
   }
 
-  //定义拷贝构造函数
-  Person::Person(const Person &p)
+  //拷贝构造函数实现深拷贝
+  Person::Person(const Person& p)
   {
-    cout << "cpy ctor." << endl;
     age = p.age;
     name = p.name;
-    lastName = p.lastName;
+    lastName = new char[strlen(p.lastName) + 1];
+    strcpy(lastName, p.lastName);
+    cout << lastName << " cpy ctor." << endl;
   }
 
   Person::~Person()
@@ -30,9 +33,15 @@ namespace ns_class_02
     cout << name << " Person object is destroyed." << endl;
     if(lastName != nullptr)
     {
-      cout << lastName << endl;
+      cout << "delete " << lastName << endl;
       delete [] lastName;
     }
+  }
+
+  void Person::SetLastName(const char *ln)
+  {
+    lastName = new char[strlen(ln) + 1];
+    strcpy(lastName, ln);
   }
 }
 
