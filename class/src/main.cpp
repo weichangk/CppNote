@@ -3,6 +3,7 @@
 #include "02/person.h"
 #include "03/test.h"
 #include "04/test.h"
+#include "07/test.h"
 using namespace std;
 
 void func01()
@@ -74,6 +75,14 @@ void func06()
   delete [] p3;
 }
 
+void func07()
+{
+  cout << "单例模式" << endl;
+  ns_class_07::Singleton* s1 = ns_class_07::Singleton::getInstance();
+  ns_class_07::Singleton* s2 = ns_class_07::Singleton::getInstance();
+  cout << (s1 == s2) << endl; // 输出1，表示s1和s2指向同一个实例
+}
+
 int main(int argc, char const *argv[])
 {
   cout << "hello class" << endl;
@@ -82,5 +91,6 @@ int main(int argc, char const *argv[])
   // func03();
   // func04();
   // func05();
-  func06();
+  // func06();
+  func07();
 }

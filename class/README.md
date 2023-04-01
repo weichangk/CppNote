@@ -19,4 +19,8 @@ git：https://github.com/weichangk/hellocpp/tree/master/class
     - delete 释放动态对象
     - 动态对象和普通对象区别
     - 动态对象数组
-
+- 07 静态成员
+    - 静态变量
+    - 静态函数
+    - 单例模式
+- 08 
