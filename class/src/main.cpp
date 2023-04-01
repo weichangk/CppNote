@@ -51,11 +51,36 @@ void func04()
   ns_class_04::A b = "bbb";//A(const char* a) 存在构造函数隐式转换
 }
 
+void func05()
+{
+  cout << "对象数组" << endl;
+  //对象数组，每个元素都会自动调用构造
+  ns_class_03::A arr1[5];
+  ns_class_03::A arr2[5] = {ns_class_03::A(1), ns_class_03::A(2), ns_class_03::A(3), ns_class_03::A(4), ns_class_03::A(5)};
+}
+
+void func06()
+{
+  cout << "动态对象" << endl;
+  ns_class_02::Person *p = new ns_class_02::Person;
+  ns_class_02::Person *p1 = new ns_class_02::Person(0, "pp" , "ppp");
+  delete p;
+  delete p1;
+
+  //栈聚合初始化
+  ns_class_02::Person p2[] = {ns_class_02::Person(), ns_class_02::Person()};
+  //创建堆上对象数组必须提供构造函数
+  ns_class_02::Person *p3 = new ns_class_02::Person[2];
+  delete [] p3;
+}
+
 int main(int argc, char const *argv[])
 {
   cout << "hello class" << endl;
   // func01();
   // func02();
   // func03();
-  func04();
+  // func04();
+  // func05();
+  func06();
 }

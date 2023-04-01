@@ -16,11 +16,11 @@ namespace ns_class_03
       A(int a)
       {
         mA = a;
-        cout << "A有参构造函数" << endl;
+        cout << "A有参构造函数" << mA << endl;
       }
       ~A()
       {
-        cout << "A析构函数" << endl;
+        cout << "A析构函数" << mA << endl;
       }
   };
 

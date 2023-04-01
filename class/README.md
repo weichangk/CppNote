@@ -13,3 +13,10 @@ git：https://github.com/weichangk/hellocpp/tree/master/class
     - 对象成员
     - 初始化列表
 - 04 explicit关键字
+- 05 类的对象数组
+- 06 动态对象
+    - new 创建动态对象
+    - delete 释放动态对象
+    - 动态对象和普通对象区别
+    - 动态对象数组
+
