@@ -23,4 +23,7 @@ git：https://github.com/weichangk/hellocpp/tree/master/class
     - 静态变量
     - 静态函数
     - 单例模式
-- 08 
+- 08 c++ 面向对模型
+    - 成员变量和函数的存储
+    - this指针
+    - const修饰成员函数

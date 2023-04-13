@@ -4,6 +4,7 @@
 #include "03/test.h"
 #include "04/test.h"
 #include "07/test.h"
+#include "08/test.h"
 using namespace std;
 
 void func01()
@@ -83,6 +84,19 @@ void func07()
   cout << (s1 == s2) << endl; // 输出1，表示s1和s2指向同一个实例
 }
 
+void func08()
+{
+  cout << "成员变量和函数的存储" << endl;
+  ns_class_08::MyClass01 c1;
+  ns_class_08::MyClass02 c2;
+  ns_class_08::MyClass03 c3;
+  ns_class_08::MyClass04 c4;
+  cout << "c1:" << sizeof(c1) << endl;//4
+  cout << "c2:" << sizeof(c2) << endl;//4
+  cout << "c3:" << sizeof(c3) << endl;//4
+  cout << "c4:" << sizeof(c4) << endl;//4
+}
+
 int main(int argc, char const *argv[])
 {
   cout << "hello class" << endl;
@@ -92,5 +106,6 @@ int main(int argc, char const *argv[])
   // func04();
   // func05();
   // func06();
-  func07();
+  // func07();
+  func08();
 }
