@@ -4,7 +4,7 @@
 		{
 			"type": "cppbuild",
 			"label": "C/C++: g++.exe vscodecmakecpp",
-			"command": "D:\\Qt\\Tools\\mingw810_64\\bin\\g++.exe",
+			"command": "E:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe",
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
@@ -23,7 +23,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"detail": "编译器: D:\\Qt\\Tools\\mingw810_64\\bin\\g++.exe"
+			"detail": "编译器: E:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe"
 		}
 	]
 }
